@@ -14,7 +14,8 @@ class Employee2{
         this.salary=0;
 
     }
-    Employee2(int empId){
+    Employee2(int empId)
+    {
         this.empId=empId;
     }
 
@@ -23,11 +24,15 @@ class Employee2{
         System.out.println("Name :- "+name+"\nEmp Id :- "+empId+"\nSalary :- "+salary);
     }
 
-    public void acceptEmployeeDetails(int salary,String name){
-        this.name=name;
-        this.salary=salary;
+    public void acceptEmployeeDetails(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter name");
+        name=sc.next();
+        System.out.println("Enter Salary");
+        salary=sc.nextInt();
     }
-    public int getEmpId(){
+    public int getEmpId()
+    {
         return empId;
     }
 }
@@ -37,8 +42,7 @@ public class Assignment_1 {
         int i;
         for(i=0;i<5;i++){
             emp[i]=new Employee2(i);
-            String name="Employee_"+i;
-            emp[i].acceptEmployeeDetails(i*1000,name);
+            emp[i].acceptEmployeeDetails();
         }
 
         for(i=0;i<5;i++){
